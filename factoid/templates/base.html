@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %} | Web</title>
+</head>
+<body>
+    {%  load staticfiles %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.js">
+    {% block styles %}
+    {% endblock %}
+    <hr>
+    <br>
+	{% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">
+                    {{ message }}
+                    <a href="#" class="close">✖</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+	{% block content %}
+	{% endblock %}
+	<footer>
+		<div class="col-sm-12"><hr><center>&copy; 2017. <a href=mailto:jha.sourab@gmail.com>Contact us.</a></center><hr></div>
+	</footer>
+</body>
+</html>
