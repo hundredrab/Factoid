@@ -1,4 +1,4 @@
-"""factoid URL Configuration
+"""ubiquity URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -20,4 +20,5 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^profile/', include('account.urls')),
+    url(r'^file/', include('file.urls')),
 ] + static(settings.STATIC_URL) #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
